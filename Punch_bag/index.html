@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ESP IoT Firebase App</title>
+
+  <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-app.js"></script>
+
+  <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-database.js"></script>
+
+  <script>
+    const firebaseConfig = {
+      apiKey: "AIzaSyCTWQpi09M64dBPxnUg_a9JlOvH2ymlClg",
+      authDomain: "ktbinq.firebaseapp.com",
+      databaseURL: "https://ktbinq-default-rtdb.firebaseio.com",
+      projectId: "ktbinq",
+      storageBucket: "ktbinq.appspot.com",
+      messagingSenderId: "801071313240",
+      appId: "1:801071313240:web:83823a6a769bb3625ef52d",
+      measurementId: "G-JVSXME4J4R",
+    };
+
+    firebase.initializeApp(firebaseConfig);
+
+    const auth = firebase.auth();
+    const db = firebase.database();
+  </script>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+    integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous" />
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+
+<body>
+  <div class="topnav">
+    <h1></h1>
+  </div>
+
+  <div id="authentication-bar" style="display: none">
+    <p>
+      <span id="authentication-status"></span>
+      <!-- <span id="user-details">USEREMAIL</span> -->
+      <!-- <a href="/" id="logout-link">(logout)</a> -->
+    </p>
+  </div>
+
+  <form id="login-form" style="display: none">
+    <div class="form-elements-container">
+      <label for="input-email"><b>Email</b></label>
+      <input type="text" placeholder="Enter Username" id="input-email" required />
+
+      <label for="input-password"><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" id="input-password" required />
+
+      <button type="submit" id="login-button">Login</button>
+      <p id="error-message" style="color: red"></p>
+    </div>
+  </form>
+
+  <div class="content-sign-in" id="content-sign-in" style="display: none">
+    <div class="cards">
+      <!-- <div class="card">
+          <p>
+            <i class="fas fa-thermometer-half" style="color: #059e8a"></i>
+            TEMPERATURE
+          </p>
+          <p>
+            <span class="reading"><span id="temp"></span> &deg;C</span>
+          </p>
+        </div> -->
+      <!-- <div class="card">
+          <p><i class="fas fa-tint" style="color: #00add6"></i> HUMIDITY</p>
+          <p>
+            <span class="reading"><span id="hum"></span> &percnt;</span>
+          </p>
+        </div> -->
+
+
+      <p>
+        <i class="fas fa-angle-double-down" style="color: #e1e437"></i>
+        
+      </p>
+      <p>
+        <span class="reading"><span id="pres"></span> </span>
+      </p>
+
+
+      <div class="battery">
+        <div class="battery-head"></div>
+        <div class="battery-body">
+          
+          <div class="charge" id="charge1"></div>
+        </div>
+        <div class="overlay">
+        </div>
+        <div id="videoContainer">
+          <video id="animation" width="640" height="320" controls>
+            <source src="fire.mov" >
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  <script src="scripts/auth.js"></script>
+  <script src="scripts/index.js"></script>
+  <script>
+
+  </script>
+
+
+</body>
+
+</html>
